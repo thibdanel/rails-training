@@ -1,0 +1,33 @@
+.cards .btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.nav-link-new {
+  font-family: 'Poppins' sans-serif;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 8px 22px;
+  opacity: 0.8;
+  transition: 0.3s;
+  justify-content: center;
+}
+
+.nav-link-new:hover {
+  color: #FFFFFF;
+  opacity: 0.9;
+  transition: 0.3s;
+}

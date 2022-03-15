@@ -1,0 +1,23 @@
+<%= render '/shared/navbar' %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.overstims.com/conseil/wp-content/uploads/2018/01/comment-s-entrainer-pour-devenir-grimpeur-1920.jpg);">
+    <div class="container">
+      <h1><strong>Protege toi</strong> en portant un casque <strong>Charles'casque</strong>!</h1>
+      <p>Decouvre notre selection realisée par nos experts</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="card-trip">
+    <img src="https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-vintage-thousand-heritage-daybreak-rouge-vue-poplock_800x.jpg?v=1642543443" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @casque.nom %></h2>
+        <p>Disponible dans la coleur: <%= @casque.couleur %> </p>
+      </div>
+      <h2 class="card-trip-pricing"> <%= @casque.prix %> €</h2>
+    </div>
+  </div>
+</div>

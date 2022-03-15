@@ -1,0 +1,27 @@
+<%= render '/shared/navbar' %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.overstims.com/conseil/wp-content/uploads/2018/01/comment-s-entrainer-pour-devenir-grimpeur-1920.jpg);">
+    <div class="container">
+      <h1><strong>Protege toi</strong> en portant un casque <strong>Charles'casque</strong>!</h1>
+      <p>Decouvre notre selection realisée par nos experts</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="cards">
+    <%# <div class="col-12"> %>
+      <% @casques.each do |casque| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-vintage-thousand-heritage-navy-bleu-marine-vue-poplock_800x.jpg?v=1642543443)">
+            <div class="name">
+              <%= casque.nom%>
+              <%= link_to "Découvrir", casque_path(casque), class: "nav-link-new" %>
+            </div>
+          </div>
+        <% end %>
+    <%# </div> %>
+  </div>
+
+
+
+</div>
