@@ -7,23 +7,56 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-
+require "open-uri"
 
 puts 'deleting all casques'
 Casque.destroy_all
 puts 'ok deleted'
 
-# puts 'creating customed casques'
-# casque1 = Casque.new(nom: 'Thibault', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+puts 'creating customed casques'
 
-puts 'Creating 20 fake casques...'
-10.times do
-  casque = Casque.new(
-    nom: Faker::Company.name,
-    marque: Faker::Name.unique.name,
-    prix: rand(50..100),
-    couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample
-  )
-  casque.save!
-end
+file1 = URI.open('https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-urbain-thousand-heritage-rose-gold-vue-poplock_800x.jpg?v=1642543443')
+file2 = URI.open('https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-urbain-marko-tandem-noir-vue-avant-3-4-oreillette_800x.jpg?v=1642872888')
+file3 = URI.open('https://cdn.shopify.com/s/files/1/0527/1276/7641/products/Apollo_Lin_3quart_1296x.jpg?v=1635793519')
+file4 = URI.open('https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-urban-kask-urban-r-silver_800x.jpg?v=1643041492')
+file5 = URI.open('https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-ville-design-bern-watts-2-0-matte-vert-forest-max-and-the-city_800x.png?v=1643121512')
+file6 = URI.open('https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-urbain-marko-tandem-blanc-ivoire-vue-avant-3-4-oreillette_800x.jpg?v=1642872888')
+
+casque1 = Casque.new(nom: 'Thibault', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+casque1.photo.attach(io: file1, filename: 'nes.png', content_type: 'image/png')
+casque1.save
+
+casque2 = Casque.new(nom: 'Charles', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+casque2.photo.attach(io: file2, filename: 'nes.png', content_type: 'image/png')
+casque2.save
+
+casque3 = Casque.new(nom: 'Arnie', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+casque3.photo.attach(io: file3, filename: 'nes.png', content_type: 'image/png')
+casque3.save
+
+casque4 = Casque.new(nom: 'Tom', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+casque4.photo.attach(io: file4, filename: 'nes.png', content_type: 'image/png')
+casque4.save
+
+casque5 = Casque.new(nom: 'Oscar', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+casque5.photo.attach(io: file5, filename: 'nes.png', content_type: 'image/png')
+casque5.save
+
+casque6 = Casque.new(nom: 'Mike', couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample, marque: 'Shubert', prix: rand(50..100))
+casque6.photo.attach(io: file6, filename: 'nes.png', content_type: 'image/png')
+casque6.save
+
+# puts 'Creating 20 fake casques...'
+# 10.times do
+#   casque = Casque.new(
+#     nom: Faker::Company.name,
+#     marque: Faker::Name.unique.name,
+#     prix: rand(50..100),
+#     couleur: ["Bleu", "Vert", "Rouge", "Jaune", "Rose"].sample
+#   )
+#   casque.save!
+# end
+
+puts "#{Casque.count} casques has been created"
+
 puts 'Finished!'

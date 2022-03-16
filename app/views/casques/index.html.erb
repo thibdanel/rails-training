@@ -12,7 +12,7 @@
   <div class="cards">
     <%# <div class="col-12"> %>
       <% @casques.each do |casque| %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-vintage-thousand-heritage-navy-bleu-marine-vue-poplock_800x.jpg?v=1642543443)">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/dnti5w4p6/image/upload/c_fill,h_200,w_300/v1/development/<%=casque.photo.key%>')">
             <div class="name">
               <%= casque.nom%>
               <%= link_to "Découvrir", casque_path(casque), class: "nav-link-new" %>

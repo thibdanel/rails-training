@@ -11,11 +11,11 @@
 
 <div class="container">
   <div class="card-trip">
-    <img src="https://cdn.shopify.com/s/files/1/0527/1276/7641/products/casque-velo-vintage-thousand-heritage-daybreak-rouge-vue-poplock_800x.jpg?v=1642543443" />
+    <img <%= cl_image_tag(@casque.photo.key, height: 200, width: 300, crop: :fill)%> />
     <div class="card-trip-infos">
       <div>
         <h2><%= @casque.nom %></h2>
-        <p>Disponible dans la coleur: <%= @casque.couleur %> </p>
+        <p>Disponible en <%= @casque.couleur.downcase %> </p>
       </div>
       <h2 class="card-trip-pricing"> <%= @casque.prix %> €</h2>
     </div>
