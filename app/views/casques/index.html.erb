@@ -13,11 +13,15 @@
     <%# <div class="col-12"> %>
       <% @casques.each do |casque| %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/dnti5w4p6/image/upload/c_fill,h_200,w_300/v1/development/<%=casque.photo.key%>')">
+          <%# casque.reviews.each do |review| %>
+          <%#= review.rating %>
             <div class="name">
+              <%= link_to 'Add a review', new_casque_review_path(casque), class: 'btn btn-primary' %>
               <%= casque.nom%>
               <%= link_to "Découvrir", casque_path(casque), class: "nav-link-new" %>
             </div>
           </div>
+        <%# end  %>
         <% end %>
     <%# </div> %>
   </div>

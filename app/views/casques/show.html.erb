@@ -9,15 +9,25 @@
   </div>
 
 
-<div class="container">
+<div class="container-show">
   <div class="card-trip">
-    <img <%= cl_image_tag(@casque.photo.key, height: 200, width: 300, crop: :fill)%> />
+    <div class="image-casque">
+      <%= cl_image_tag(@casque.photo.key, height: 500, width: 800, crop: :fill)%>
+    </div>
     <div class="card-trip-infos">
       <div>
         <h2><%= @casque.nom %></h2>
         <p>Disponible en <%= @casque.couleur.downcase %> </p>
       </div>
       <h2 class="card-trip-pricing"> <%= @casque.prix %> €</h2>
+      <h2>Rating: <%= @casque.reviews.average(:rating)%> /5 </h2>
     </div>
   </div>
+    <div class="reviews col-3">
+        <ul>
+        <% @casque.reviews.each do |review| %>
+        <li><%= review.content %></li>
+        <% end %>
+      </ul>
+    </div>
 </div>

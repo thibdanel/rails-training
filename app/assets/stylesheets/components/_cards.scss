@@ -71,21 +71,48 @@
 
 //Show
 
+
+.container-show {
+
+  justify-content: center;
+  // margin-left: 300px;
+  display: flex;
+  margin: 10px;
+}
+
+
 .card-trip {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 15px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 4px;
   border: solid;
   border-width: 2;
   border-color: rgb(223, 223, 223);
+  height: 600px;
+  width: 800px;
+  background-color: rgb(228, 228, 228);
 }
 
-.card-trip > img {
-  height: 500px;
-  width: 80%;
+.reviews {
+
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(182, 182, 178);
+  margin: 15px;
+  padding-top: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  justify-content: start;
+
+}
+
+.card-trip .image-casque {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -105,9 +132,8 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   //align-items: flex-end;
-  flex-direction: column;
   position: relative;
   border-left: solid;
   border-width: 1;

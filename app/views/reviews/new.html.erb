@@ -1,0 +1,12 @@
+
+
+<div class="container">
+  <div class="formulaire-review">
+    <h2>Add a review to this casque</h2>
+      <%= simple_form_for [@casque, @review] do |f| %>
+        <%= f.input :rating, label: "Rating"  %>
+        <%= f.input :content, label: "Content"  %>
+        <%= f.submit 'enregister'  %>
+      <%end  %>
+  </div>
+</div>
