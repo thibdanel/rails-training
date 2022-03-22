@@ -10,9 +10,9 @@
 
 
 <div class="container-show">
-  <div class="card-trip">
+  <div class="card-trip col-9">
     <div class="image-casque">
-      <%= cl_image_tag(@casque.photo.key, height: 500, width: 800, crop: :fill)%>
+      <%= cl_image_tag(@casque.photo.key, height: 480, width: 780, crop: :fill)%>
     </div>
     <div class="card-trip-infos">
       <div>
@@ -23,11 +23,18 @@
       <h2>Rating: <%= @casque.reviews.average(:rating)%> /5 </h2>
     </div>
   </div>
-    <div class="reviews col-3">
-        <ul>
-        <% @casque.reviews.each do |review| %>
-        <li><%= review.content %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%# <div class="reviews col-3"> %>
+      <div class="p-3 mb-2 bg-secondary text-white mt-3 mb-3 col-3" style="--bs-bg-opacity: .6;">
+        <h3 class='text-center'>Reviews</h3>
+          <div class="reviews-text">
+            <ul>
+              <% @casque.reviews.each do |review| %>
+              <li><%= review.content %></li>
+              <% end %>
+            </ul>
+          </div>
+      </div>
+    <%# </div> %>
 </div>
+
+<%= render '/shared/footer' %>

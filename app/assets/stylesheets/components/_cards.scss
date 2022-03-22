@@ -77,7 +77,7 @@
   justify-content: center;
   // margin-left: 300px;
   display: flex;
-  margin: 10px;
+  // margin: 10px;
 }
 
 
@@ -100,20 +100,27 @@
 
 .reviews {
 
-  border: solid;
-  border-width: 1px;
-  border-color: rgb(182, 182, 178);
-  margin: 15px;
-  padding-top: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  justify-content: start;
+
 
 }
+
+.card-category .style-review {
+
+  position: absolute;
+  display: flex;
+  margin-left: 330px;
+  margin-bottom: 160px;
+  color: white;
+
+}
+
+
 
 .card-trip .image-casque {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  padding: 8px;
+  // object-fit: cover;
 }
 
 .card-trip h2 {
@@ -149,3 +156,36 @@
 
 
 //flex-direction: column;
+
+
+.card {
+
+  padding: 5px;
+  border-radius: 8px;
+  background-color: $light;
+  margin-top: 10px;
+  box-shadow: 20px;
+
+
+
+}
+
+.card .h2 {
+
+  text-align: center;
+
+}
+
+.card .card-title{
+
+  text-align: center;
+  color: grey;
+  font-size: 22px;
+
+}
+
+// .row {
+
+//   display: flex;
+//   justify-content: space-around;
+// }

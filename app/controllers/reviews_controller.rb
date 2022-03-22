@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   def new
     @review = Review.new
     @casque = Casque.find(params[:casque_id])
+    @casques = Casque.all
   end
 
 
