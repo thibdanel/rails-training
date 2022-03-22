@@ -1,0 +1,24 @@
+<%= render '/shared/navbar' %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.overstims.com/conseil/wp-content/uploads/2018/01/comment-s-entrainer-pour-devenir-grimpeur-1920.jpg);">
+  <div class="container">
+    <h1><strong>Protege toi</strong> en portant un casque <strong>Charles'casque</strong>!</h1>
+    <p>Decouvre notre selection realisée par nos experts</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div>
+<div class="container">
+  <div class="formulaire-review">
+    <h2>Add a review to this casque</h2>
+      <%= simple_form_for [@casque, @review] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :content, label: "Content"  %>
+        <%= f.input :birthday %>
+        <%= f.input :rating, collection: Review::AUTHORIZED_RATINGS %>
+        <%= f.association :casque %>
+        <%= f.button :submit, 'Save', class: "btn-primary" %>
+        <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+      <%end  %>
+  </div>
+</div>
+
+<%= render '/shared/footer' %>

@@ -1,0 +1,53 @@
+<%= render '/shared/navbar' %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(http://cdn.shopify.com/s/files/1/0527/1276/7641/collections/DSC4137_low_def.jpg?v=1635898256);">
+    <div class="container">
+      <h1><strong>Protege toi</strong> en portant un casque <strong>Charles'casque</strong>!</h1>
+      <p>Decouvre notre selection realisée par nos experts</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <% @casques.each do |casque| %>
+      <div class="col-4">
+        <div class="d-flex justify-content-around">
+          <div class="card" style="width: 26rem;">
+            <img src="https://blog.zoov.io/content/images/2021/02/5_51101_1439092452.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Casque <%=casque.nom%></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="text-center">
+                <%= link_to 'Découvrir', casque_path(casque), class: 'btn btn-outline-secondary' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end %>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="cards">
+    <%# <div class="col-12"> %>
+      <% @casques.each do |casque| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/dnti5w4p6/image/upload/c_fill,h_200,w_300/v1/development/<%=casque.photo.key%>')">
+            <div class="style-review">
+              <%= link_to 'Review', new_casque_review_path(casque), class:'btn btn-primary btn-sm position-relative'%>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"> <%= casque.reviews.count  %> <span class="visually-hidden">unread messages</span></span>
+            </div>
+          <div class="name">
+              <%= casque.nom%>
+              <%= link_to "Découvrir", casque_path(casque), class: "nav-link-new" %>
+            </div>
+          </div>
+        <% end %>
+  </div>
+</div>
+
+
+<%= render '/shared/footer' %>

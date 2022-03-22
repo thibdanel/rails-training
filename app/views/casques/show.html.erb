@@ -1,0 +1,40 @@
+<%= render '/shared/navbar' %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.overstims.com/conseil/wp-content/uploads/2018/01/comment-s-entrainer-pour-devenir-grimpeur-1920.jpg);">
+    <div class="container">
+      <h1><strong>Protege toi</strong> en portant un casque <strong>Charles'casque</strong>!</h1>
+      <p>Decouvre notre selection realisée par nos experts</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
+    </div>
+  </div>
+
+
+<div class="container-show">
+  <div class="card-trip col-9">
+    <div class="image-casque">
+      <%= cl_image_tag(@casque.photo.key, height: 480, width: 780, crop: :fill)%>
+    </div>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @casque.nom %></h2>
+        <p>Disponible en <%= @casque.couleur.downcase %> </p>
+      </div>
+      <h2 class="card-trip-pricing"> <%= @casque.prix %> €</h2>
+      <h2>Rating: <%= @casque.reviews.average(:rating)%> /5 </h2>
+    </div>
+  </div>
+    <%# <div class="reviews col-3"> %>
+      <div class="p-3 mb-2 bg-secondary text-white mt-3 mb-3 col-3" style="--bs-bg-opacity: .6;">
+        <h3 class='text-center'>Reviews</h3>
+          <div class="reviews-text">
+            <ul>
+              <% @casque.reviews.each do |review| %>
+              <li><%= review.content %></li>
+              <% end %>
+            </ul>
+          </div>
+      </div>
+    <%# </div> %>
+</div>
+
+<%= render '/shared/footer' %>
