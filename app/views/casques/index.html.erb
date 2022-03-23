@@ -14,7 +14,30 @@
       <div class="col-4">
         <div class="d-flex justify-content-around">
           <div class="card" style="width: 26rem;">
-            <img src="https://blog.zoov.io/content/images/2021/02/5_51101_1439092452.jpg" class="card-img-top" alt="...">
+            <%= cl_image_tag(casque.photo.key, height: 300, width: 405, crop: :fill) %>
+            <div class="card-body">
+              <h5 class="card-title">Casque <%=casque.nom%></h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="text-center">
+                <%= link_to 'Découvrir', casque_path(casque), class: 'btn btn-outline-secondary' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @casques.each do |casque| %>
+      <div class="col-4">
+        <div class="d-flex justify-content-around">
+          <div class="card" style="width: 26rem;">
+            <%# <div class="justify-content-center"> %>
+              <%= cl_image_tag(casque.photo.key, height: 300, width: 405, crop: :fill) %>
+            <%# </div> %>
             <div class="card-body">
               <h5 class="card-title">Casque <%=casque.nom%></h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -37,8 +60,8 @@
       <% @casques.each do |casque| %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://res.cloudinary.com/dnti5w4p6/image/upload/c_fill,h_200,w_300/v1/development/<%=casque.photo.key%>')">
             <div class="style-review">
-              <%= link_to 'Review', new_casque_review_path(casque), class:'btn btn-primary btn-sm position-relative'%>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"> <%= casque.reviews.count  %> <span class="visually-hidden">unread messages</span></span>
+              <%# <%= link_to 'Review', new_casque_review_path(casque), class:'btn btn-primary btn-sm position-relative'%>
+                <%# <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary"> <%= casque.reviews.count  <span class="visually-hidden">unread messages</span></span> %>
             </div>
           <div class="name">
               <%= casque.nom%>
