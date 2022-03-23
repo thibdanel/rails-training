@@ -9,6 +9,8 @@
 require 'faker'
 require "open-uri"
 
+Review.destroy_all
+
 puts 'deleting all casques'
 Casque.destroy_all
 puts 'ok deleted'
