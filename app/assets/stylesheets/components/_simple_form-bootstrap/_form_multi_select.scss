@@ -1,8 +1,0 @@
-.form-select {
-  &.date,
-  &.datetime,
-  &.time {
-    &:first-of-type { margin-left: 5 !important; }
-    &:last-of-type { margin-right: 5 !important; }
-  }
-}
